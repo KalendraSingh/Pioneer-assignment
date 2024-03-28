@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CryptoPrices from './components/CryptoPrices';
+import MetaMask from './components/Metamask';
+import PopulationGraph from './components/PopulationGraph';
+import Twitter from './components/Twitter';
+import Dashboard from './pages/Dashboard';
+import { Route,Routes } from 'react-router-dom';
+import Organization from "./pages/Organization"
+import Assets from './pages/Assets';
+import Trade from './pages/Trade';
+import History from './pages/History';
+import Wallet from './pages/Wallet';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Routes>
+        <Route path="/" element={<Dashboard />} exact />
+        <Route path='/org' element = {<Organization/>}/>
+        <Route path='/assets' element = {<Assets/>}/>
+        <Route path='/trade' element = {<Trade/>}/>
+        <Route path='/history' element = {<History/>}/>
+        <Route path='/wallet' element = {<Wallet/>}/>
+     </Routes>
     </div>
   );
 }

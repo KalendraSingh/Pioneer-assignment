@@ -1,13 +1,285 @@
-body {
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  color: aliceblue;
+}
+  /*styles for graph */
+.graph-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.population-graph {
+  padding: 20px;
+}
+
+.population-graph-container {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+  /* styles for main container*/
+.main-container{
+  display: flex;
+  flex-direction: row;
+
+}
+
+  /* Your styles for sidebar */
+.sidebar-container{
+  width: 18%;
+  background-color: #21202f;
+  padding: 10px;
+  height: 100vh;
+
+}
+.container{
+  width: 82%;
+  padding: 10px;
+  background-color: #1a1616;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+.sidebar-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: rgb(22, 21, 29); 
+  border:none;
+  padding: 5px; 
+  border-radius: 5px; 
+
+}
+
+.search-box input[type='text'] {
+  border: none;
+  outline: none; 
+  flex: 1; 
+  margin-left: 5px; 
+  background-color: transparent;
+}
+
+.sidebar-menu ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: left;
+  gap: 20px;
+  padding: 15px;
+}
+.sidebar-menu ul li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  gap: 10px;
+}
+.icon{
+  font-size: 8px;
+}
+
+.sidebar-menu{
+  margin-top: 20px;
+}
+  /*  styles for profile*/
+.profile-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color:rgb(22, 21, 29) ;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.population-card{
+  background-color: #110c30;
+}
+
+.population-card-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.horizontal-line-container{
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-line{
+  width: 90%;
+  border-color: gray;
+}
+
+.population-card-heading{
+  text-align: left;
+  padding: 15px;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap:5px;
+}
+
+
+.assets-today{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.crypto-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.symbol-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.symbol{
+  background-color: rgb(62, 240, 80);
+  border-radius: 50%;
+  padding: 10px;
+}
+.descryption{
+  padding: 5px;
+}
+
+.infoicon-trade{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.infoicon{
+  background-color:#2d7aed;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+  /* styles for header container in dashboard*/
+
+.container-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.crypro-card{
+  width: 300px;
+}
+.wallet-card{
+  width: 300px;
+}
+
+.twitter-card{
+  width: 300px;
+}
+.graph-card{
+  width: 450px;
+}
+  /* Your styles for tablet view screens */
+
+@media screen and (max-width: 900px) {
+  .graph-card{
+    width: 700px;
+  }
+  .wallet-card{
+    width: 350px;
+  }
+  
+  .twitter-card{
+    width: 350px;
+  }
+}
+
+.menuicon{
+  display: none;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #aed874;
+  padding: 1px;
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+/* Define styles for the active navbar link */
+.navbar-link.active {
+  background-color:#aed874; ;
+  border-radius: 7px;
+}
+
+/* Define hover effect for navbar links */
+.navbar-link:hover {
+  background-color:#aed874; ;
+  border-radius: 7px;
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+  /* Your styles for mobile screens */
+
+.menuicon{
+  display: block;
+}
+.container-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+}
+.header-button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container-heading{
+  font-size: 20px;
+}
+.sidebar-container{
+  display: none;
+}
+.container{
+  width: 100%;
+  padding: 10px;
+  background-color: #1a1616;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
 }
